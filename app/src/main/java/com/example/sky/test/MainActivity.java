@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         oks.setCallback(new PlatformActionListener() {
             @Override
             public void onComplete(Platform platform, int i, HashMap<String, Object> hashMap) {
-                Log.d("oks","onComplete");
+                Log.d("oks","onComplete i="+i);
             }
 
             @Override
