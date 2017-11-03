@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sky.test.activity.ViewActivity">
+
+   <com.example.sky.test.view.ViewTouch
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/colorPrimary"
+       android:clickable="true">
+
+       <com.example.sky.test.view.MarqueeTextView
+           android:id="@+id/text"
+           android:layout_width="250dp"
+           android:layout_height="wrap_content"
+           android:text="我是子View点关口控控顾客都是高考刚刚赶快订购"
+           android:layout_centerInParent="true"
+           android:focusable="true"
+           android:focusableInTouchMode="true"
+           android:ellipsize="marquee"
+           android:maxLines="1"
+           android:singleLine="true"
+           android:marqueeRepeatLimit="marquee_forever"
+           />
+
+   </com.example.sky.test.view.ViewTouch>
+
+</RelativeLayout>
