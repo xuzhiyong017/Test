@@ -10,6 +10,15 @@ android {
     compileSdkVersion 25
     buildToolsVersion '26.0.2'
 
+    signingConfigs {
+        signingConfig {
+            keyAlias 'xuzhiyong'
+            keyPassword '123456'
+            storeFile file('signed')
+            storePassword '123456'
+        }
+    }
+
     defaultConfig {
         applicationId "com.example.sky.test"
         minSdkVersion 19
@@ -33,14 +42,7 @@ android {
         }
     }
 
-    signingConfigs {
-        signingConfig {
-            keyAlias 'xuzhiyong'
-            keyPassword '123456'
-            storeFile file('signed')
-            storePassword '123456'
-        }
-    }
+
 
     //渠道Flavors，我这里写了一些常用的
     productFlavors {
