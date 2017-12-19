@@ -6,6 +6,7 @@
     tools:context="com.example.sky.test.activity.ViewActivity">
 
    <com.example.sky.test.view.ViewTouch
+       android:id="@+id/view_touch"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:background="@color/colorPrimary"
@@ -13,7 +14,7 @@
 
        <com.example.sky.test.view.MarqueeTextView
            android:id="@+id/text"
-           android:layout_width="250dp"
+           android:layout_width="150dp"
            android:layout_height="wrap_content"
            android:text="我是子View点关口控控顾客都是高考刚刚赶快订购"
            android:layout_centerInParent="true"
@@ -21,9 +22,40 @@
            android:focusableInTouchMode="true"
            android:ellipsize="marquee"
            android:maxLines="1"
+           android:textSize="20sp"
+
            android:singleLine="true"
            android:marqueeRepeatLimit="marquee_forever"
            />
+
+       <TextView
+           android:id="@+id/tv_topic_content"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:ellipsize="marquee"
+           android:scrollHorizontally="true"
+           android:marqueeRepeatLimit="marquee_forever"
+           android:maxLines="1"
+           android:maxWidth="189dp"
+           android:singleLine="true"
+           android:textColor="#FFFFFF"
+           android:textSize="14sp"
+           android:layout_alignParentBottom="true"
+           android:text="我是子View点关口控控顾客都是高考刚刚赶快fdfdsfssdfsfdfs订购" />
+       <TextView
+           android:id="@+id/tv_topic_content_top"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:ellipsize="marquee"
+           android:scrollHorizontally="true"
+           android:marqueeRepeatLimit="marquee_forever"
+           android:maxLines="1"
+           android:maxWidth="189dp"
+           android:singleLine="true"
+           android:textColor="#FFFFFF"
+           android:textSize="14sp"
+           android:layout_alignParentTop="true"
+           android:text="我是子View点关口控控顾客都是高考刚刚赶快fdfdsfssdfsfdfs订购" />
 
    </com.example.sky.test.view.ViewTouch>
 

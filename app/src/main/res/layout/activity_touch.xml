@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.sky.test.activity.TouchActivity">
 
-    <RelativeLayout
+    <View
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="true"
-        android:gravity="center"/>
+
+        android:gravity="center" />
 
 </com.example.sky.test.view.ViewTouch>

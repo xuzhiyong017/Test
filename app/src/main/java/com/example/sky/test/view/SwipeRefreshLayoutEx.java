@@ -12,7 +12,7 @@ import android.view.MotionEvent;
 
 public class SwipeRefreshLayoutEx extends SwipeRefreshLayout {
 
-    private ViewPager mViewPager;
+    private fr.castorflex.android.verticalviewpager.VerticalViewPager  mViewPager;
 
     public SwipeRefreshLayoutEx(Context context) {
         super(context);
@@ -48,7 +48,7 @@ public class SwipeRefreshLayoutEx extends SwipeRefreshLayout {
         return super.onTouchEvent(ev);
     }
 
-    public void setViewPager(ViewPager mViewPager) {
+    public void setViewPager(fr.castorflex.android.verticalviewpager.VerticalViewPager mViewPager) {
         this.mViewPager = mViewPager;
     }
 }

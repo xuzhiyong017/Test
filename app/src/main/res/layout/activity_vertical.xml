@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.sky.test.activity.VerticalActivity">
 
+
     <com.example.sky.test.view.SwipeRefreshLayoutEx
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
@@ -13,26 +14,39 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <com.example.sky.test.view.VerticalViewPager
-                android:id="@+id/viewpager"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            </com.example.sky.test.view.VerticalViewPager>
+                    <fr.castorflex.android.verticalviewpager.VerticalViewPager
+                        android:id="@+id/viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </fr.castorflex.android.verticalviewpager.VerticalViewPager>
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="跳转到第一页"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp"
-                android:onClick="onclick"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="跳转到第一页"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="20dp"
+                        android:onClick="onclick"/>
+                </RelativeLayout>
+            </RelativeLayout>
         </RelativeLayout>
 
 
+
+
     </com.example.sky.test.view.SwipeRefreshLayoutEx>
+
+
+
 
 
 

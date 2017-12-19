@@ -1,6 +1,7 @@
 package com.example.sky.test.view;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -12,6 +13,8 @@ import android.view.View;
  */
 
 public class VerticalViewPager extends ViewPager {
+
+    private int count = 0;
 
     public VerticalViewPager(Context context) {
         this(context, null);
@@ -64,9 +67,9 @@ public class VerticalViewPager extends ViewPager {
 
             float alpha = 0;
             if (0 <= position && position <= 1) {
-                alpha = 1 - position;
+                alpha = 1 ;
             } else if (-1 < position && position < 0) {
-                alpha = position + 1;
+                alpha = 1;
             }
             view.setAlpha(alpha);
             float transX = view.getWidth() * -position;
@@ -77,4 +80,21 @@ public class VerticalViewPager extends ViewPager {
     }
 
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.d("VerticalViewPager", "onMeasure: "+count++);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        super.onLayout(changed, l, t, r, b);
+        Log.d("VerticalViewPager", "onLayout: ");
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+    }
 }

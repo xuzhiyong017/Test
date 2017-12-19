@@ -6,13 +6,18 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.example.sky.test.activity.AnimationActivity;
 import com.example.sky.test.activity.BookManagerActivity;
 import com.example.sky.test.activity.CustomWeekActivity;
+import com.example.sky.test.activity.EditTextActivity;
 import com.example.sky.test.activity.RefreshActivity;
 import com.example.sky.test.activity.TouchActivity;
+import com.example.sky.test.activity.TraceViewTestActivity;
 import com.example.sky.test.activity.VerticalActivity;
 import com.example.sky.test.activity.ViewActivity;
 import com.example.sky.test.model.JumpBeans;
@@ -38,16 +43,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG,"onCreate");
+
     }
 
     public void onclick(View v){
-//        Intent intent = new Intent(this,CustomWeekActivity.class);
-////        JumpBeans beans = new JumpBeans();
-////        beans.setmUri(Uri.parse("http://www.baidu.com"));
-////        intent.putExtra("ceshi",beans);
-//        startActivity(intent);
+        Intent intent = new Intent(this,VerticalActivity.class);
+//        JumpBeans beans = new JumpBeans();
+//        beans.setmUri(Uri.parse("http://www.baidu.com"));
+//        intent.putExtra("ceshi",beans);
+        startActivity(intent);
 ////        GameSoundPlayer.play(GameSoundPlayer.game_sound_daojishi);
-        showShare();
+//        showShare();
+//        Uri uri = Uri.parse("mktv://stream?stream_id=z1.appphp.59fc2fefd425e14fcf5aede1&anchor_id=10000074&type=1");
+//        startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 
     private void showShare() {

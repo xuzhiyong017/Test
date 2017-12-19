@@ -6,18 +6,21 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+
 
 import com.example.sky.test.R;
 import com.example.sky.test.view.SwipeRefreshLayoutEx;
-import com.example.sky.test.view.VerticalViewPager;
-import com.example.sky.test.view.ViewPager;
+import com.example.sky.test.view.ViewItemInfo;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import fr.castorflex.android.verticalviewpager.VerticalViewPager;
 
 public class VerticalActivity extends AppCompatActivity {
 
@@ -34,6 +37,13 @@ public class VerticalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vertical);
 
+
+        TextView textview = new TextView(this);
+        textview.setText("popwindow");
+        PopupWindow window = new PopupWindow(this);
+        window.setContentView(textview);
+        window.showAtLocation(findViewById(R.id.swipe_refresh), Gravity.NO_GRAVITY,0,0);
+
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = getWindow().getDecorView();
             int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -43,17 +53,17 @@ public class VerticalActivity extends AppCompatActivity {
         }
 
         mViewPager = (VerticalViewPager) findViewById(R.id.viewpager);
-        mViewPager.setMinPageOffset(0.1f);
+//        mViewPager.setMinPageOffset(0.1f);
         mEx = (SwipeRefreshLayoutEx) findViewById(R.id.swipe_refresh);
         mEx.setViewPager(mViewPager);
 
 
-        View view0 = View.inflate(this,R.layout.item,null);
-        View view2 = View.inflate(this,R.layout.item,null);
-        View view3= View.inflate(this,R.layout.item,null);
-        views.add(view0);
-        views.add(view2);
-        views.add(view3);
+//        View view0 = View.inflate(this,R.layout.item,null);
+//        View view2 = View.inflate(this,R.layout.item,null);
+//        View view3= View.inflate(this,R.layout.item,null);
+//        views.add(view0);
+//        views.add(view2);
+//        views.add(view3);
 
 
 
@@ -61,22 +71,29 @@ public class VerticalActivity extends AppCompatActivity {
 
         mAdapter = new ViewpagerAdapter();
         mViewPager.setAdapter(mAdapter);
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                lastPosition = position;
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
+//        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//                lastPosition = position;
+//
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//                if(state == android.support.v4.view.ViewPager.SCROLL_STATE_IDLE){
+////                    try {
+////                        Thread.sleep(50l);
+////                    } catch (Exception e) {
+////                        e.printStackTrace();
+////                    }
+//                }
+//            }
+//        });
 
         for(int i = 0 ; i < 100 ; i++){
             lists.add(""+i);
@@ -117,6 +134,7 @@ public class VerticalActivity extends AppCompatActivity {
 
 
 
+
         public ViewpagerAdapter() {
             super();
         }
@@ -133,21 +151,15 @@ public class VerticalActivity extends AppCompatActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-
-            View view = views.get(position % 3);
-            TextView textView = (TextView) view.findViewById(R.id.text_num);
-            textView.setText(""+position);
-
-            if(view.getParent() != null){
-                container.removeView(view);
-            }
-            container.addView(view);
-            return view;
+            ViewItemInfo itemInfo = new ViewItemInfo(container.getContext());
+            itemInfo.update(position);
+            container.addView(itemInfo);
+            return itemInfo;
         }
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-//            container.removeView((View) object);
+            container.removeView((View) object);
         }
     }
 }
