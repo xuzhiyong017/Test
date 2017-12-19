@@ -20,6 +20,5 @@ public class App extends Application {
         super.onCreate();
         mContext = this;
         ShareSDK.initSDK(this);
-        R.drawabl
     }
 }
