@@ -65,15 +65,15 @@ android {
             if ("true".equals(IS_JENKINS)) {
                 timeNow = JENKINS_TIME
                 outDirectory = '/home/sky/.jenkins/workspace/Test/app/build/outputs/apk'
-                newName = 'yj-android-v' +
-                        APP_VERSION + '-' + variant.productFlavors[0].name + timeNow + '-' + variant.buildType.name + '.apk'
+                newName = 'android-v' +
+                        APP_VERSION + '-' + variant.productFlavors[0].name +'-'+ timeNow + '-' + variant.buildType.name + '.apk'
             } else {
                 timeNow = getDate()
                 if (variant.buildType.name.equals('debug')) {
-                    newName = "yj-android-v${APP_VERSION}-debug.apk"
+                    newName = "android-v-${APP_VERSION}-debug.apk"
                 } else {
-                    newName = 'yj-android-v' +
-                            APP_VERSION + '-' + variant.productFlavors[0].name + timeNow + '-' + variant.buildType.name + '.apk'
+                    newName = 'android-v-' +
+                            APP_VERSION + '-' + variant.productFlavors[0].name +'-'+ timeNow + '-' + variant.buildType.name + '.apk'
                 }
             }
 
