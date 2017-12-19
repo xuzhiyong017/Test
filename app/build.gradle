@@ -14,7 +14,7 @@ android {
         signingConfig {
             keyAlias 'xuzhiyong'
             keyPassword '123456'
-            storeFile file('signed')
+            storeFile file('../signed')
             storePassword '123456'
         }
     }
