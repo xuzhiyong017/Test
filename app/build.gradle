@@ -29,7 +29,6 @@ dependencies {
     compile files('libs/ShareSDK-Core-2.8.3.jar')
     compile files('libs/ShareSDK-SinaWeibo-2.8.3.jar')
     compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:recyclerview-v7:25.1.0'
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     testCompile 'junit:junit:4.12'
