@@ -30,6 +30,7 @@ public class LikeFrameView extends FrameLayout {
 
     private Drawable icon = getResources().getDrawable(R.drawable.ic_heart);
     private GestureDetector mDetectorGesture;
+    boolean isTouchDouble = false;
 
 
     public LikeFrameView(@NonNull Context context) {
@@ -61,11 +62,17 @@ public class LikeFrameView extends FrameLayout {
             float x = event.getX();
             float y = event.getY();
             addHeartView(x,y);
+            isTouchDouble = true;
             return true;
         }
 
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e) {
+            if(isTouchDouble){
+                isTouchDouble = false;
+                onDoubleTap(e);
+                return false;
+            }
             Toast.makeText(getContext(),"单击",Toast.LENGTH_SHORT).show();
             return true;
         }
