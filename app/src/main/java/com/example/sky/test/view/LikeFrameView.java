@@ -69,8 +69,8 @@ public class LikeFrameView extends FrameLayout {
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e) {
             if(isTouchDouble){
-                isTouchDouble = false;
                 onDoubleTap(e);
+                isTouchDouble = false;
                 return false;
             }
             Toast.makeText(getContext(),"单击",Toast.LENGTH_SHORT).show();
