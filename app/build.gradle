@@ -42,8 +42,6 @@ android {
         }
     }
 
-
-
     //渠道Flavors，我这里写了一些常用的
     productFlavors {
         commonsoon {
@@ -66,14 +64,14 @@ android {
                 timeNow = JENKINS_TIME
                 outDirectory = '/home/sky/.jenkins/workspace/Test/app/build/outputs/apk'
                 newName = 'android-v' +
-                        APP_VERSION + '-' + variant.productFlavors[0].name +'-'+ timeNow + '-' + variant.buildType.name + '.apk'
+                        APP_VERSION + '-' + variant.productFlavors[0].name + '-' + timeNow + '-' + variant.buildType.name + '.apk'
             } else {
                 timeNow = getDate()
                 if (variant.buildType.name.equals('debug')) {
                     newName = "android-v-${APP_VERSION}-debug.apk"
                 } else {
                     newName = 'android-v-' +
-                            APP_VERSION + '-' + variant.productFlavors[0].name +'-'+ timeNow + '-' + variant.buildType.name + '.apk'
+                            APP_VERSION + '-' + variant.productFlavors[0].name + '-' + timeNow + '-' + variant.buildType.name + '.apk'
                 }
             }
 
@@ -86,6 +84,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -99,5 +98,26 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile "com.android.support:design:25.3.1"
     compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
+
+    compile('com.facebook.fresco:fresco:1.2.0') {
+        exclude(module: "support-v4")
+        exclude(module: "android-support-v4")
+    }
+    // For WebP support, including animated WebP
+    compile('com.facebook.fresco:animated-webp:1.2.0') {
+        exclude(module: "support-v4")
+        exclude(module: "android-support-v4")
+    }
+    compile('com.facebook.fresco:webpsupport:1.2.0') {
+        exclude(module: "support-v4")
+        exclude(module: "android-support-v4")
+    }
+    compile('com.facebook.fresco:animated-gif:1.2.0') {
+        exclude(module: "support-v4")
+        exclude(module: "android-support-v4")
+    }
 }
+
+
+
 

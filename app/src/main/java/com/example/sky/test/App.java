@@ -3,6 +3,7 @@ package com.example.sky.test;
 import android.app.Application;
 import android.content.Context;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.mob.commons.SHARESDK;
 
 import cn.sharesdk.framework.ShareSDK;
@@ -20,5 +21,6 @@ public class App extends Application {
         super.onCreate();
         mContext = this;
         ShareSDK.initSDK(this);
+        Fresco.initialize(this);
     }
 }

@@ -14,12 +14,15 @@ import android.widget.TextView;
 import com.example.sky.test.activity.AnimationActivity;
 import com.example.sky.test.activity.BookManagerActivity;
 import com.example.sky.test.activity.CustomWeekActivity;
+import com.example.sky.test.activity.DouyinLikeViewActivity;
 import com.example.sky.test.activity.EditTextActivity;
+import com.example.sky.test.activity.ImageScaleActivity;
 import com.example.sky.test.activity.RefreshActivity;
 import com.example.sky.test.activity.TouchActivity;
 import com.example.sky.test.activity.TraceViewTestActivity;
 import com.example.sky.test.activity.VerticalActivity;
 import com.example.sky.test.activity.ViewActivity;
+import com.example.sky.test.activity.ViewPagerMoreActivity;
 import com.example.sky.test.model.JumpBeans;
 import com.example.sky.test.sound.GameSoundPlayer;
 import com.example.sky.test.sound.SoundPoolPlayer;
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onclick(View v){
-        Intent intent = new Intent(this,VerticalActivity.class);
+        Intent intent = new Intent(this,DouyinLikeViewActivity.class);
 //        JumpBeans beans = new JumpBeans();
 //        beans.setmUri(Uri.parse("http://www.baidu.com"));
 //        intent.putExtra("ceshi",beans);

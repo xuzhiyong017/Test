@@ -96,7 +96,10 @@
         <activity android:name=".activity.TouchActivity" />
         <activity android:name=".activity.CustomWeekActivity" />
         <activity android:name=".activity.TraceViewTestActivity" />
-        <activity android:name=".activity.EditTextActivity"></activity>
+        <activity android:name=".activity.EditTextActivity" />
+        <activity android:name=".activity.ViewPagerMoreActivity" />
+        <activity android:name=".activity.ImageScaleActivity" />
+        <activity android:name=".activity.DouyinLikeViewActivity"></activity>
     </application>
 
 </manifest>
